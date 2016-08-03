@@ -8,11 +8,11 @@ df = xls_population.parse('population-Madinah-Region-2011')
 #df.set_index('Governorate', inplace = True)
 df.index.name = None
 df.columns = ['Region','Saudi','Non Saudi','Total']
-print(df['Region'])
 
 my_dpi = 96
-plt.style.use('ggplot')
-ax = df[['Saudi','Non Saudi']].plot(kind='line', title ="Population 2011 Medinah Governorate",figsize=(15,10),legend=True, fontsize=12)
+#plt.style.use('ggplot')
+plt.style.use('fivethirtyeight')
+ax = df[['Saudi','Non Saudi']].plot(kind='bar', title ="Population 2011 Medinah Governorate",figsize=(15,10),legend=True, fontsize=12)
 ax.set_xlabel("Regions",fontsize=12)
 ax.set_ylabel("Population",fontsize=12)
 ax.set_xticklabels(df['Region'],rotation=0)
